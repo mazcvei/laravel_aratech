@@ -1,0 +1,13 @@
+
+html,p,h1,tr,td,th,a,label,button,input{
+    color:red !important;
+}
+
+.box{
+    height: 100px;
+    color: white;
+    margin: 15px;
+    background-color: #000a30;
+    border-radius: 5px;
+    text-align: center;
+}
