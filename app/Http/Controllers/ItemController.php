@@ -29,6 +29,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         dd($request->all());
+
     }
     /**
      * Display the specified resource.
@@ -52,6 +53,10 @@ class ItemController extends Controller
     {
         //dd($request->all());
         echo "Editando el item con id $request->idItem y poniendo como nombre: $request->item";
+
+        //redirecciones
+        return redirect()->route('mostrar.editar',$request->idItem);
+       // return redirect()->back();
     }
 
     /**

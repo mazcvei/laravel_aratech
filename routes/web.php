@@ -60,7 +60,14 @@ Route::get('/test', function(){
              'password'=>\Illuminate\Support\Facades\Hash::make("123456"),
          ]);
 
-         */
+         $user = new User();
+         $user->name = "nuevo user";
+         $user->lastname = "nuevo user lastname";
+         $user->email = "nuevo@user.es";
+         $user->password = \Illuminate\Support\Facades\Hash::make("123456");
+         $user->save();
+     */
+
 });
 
 
