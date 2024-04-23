@@ -3,6 +3,7 @@
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TestController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,53 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('/test', function(){
+    /*
+      //Obtener datos
+
+      $user = User::find(1); //ORM Eloquent
+      $users = User::where('id','>',3)
+          ->where('id','<',10)
+          ->where('name','like','%h%')
+          ->get();
+      dd($users);
+      $users = User::select('name','lastname','email')->latest()->get();
+      foreach($users as $user){
+          echo $user->name." ". $user->lastname." ".$user->email. "<br>";
+      }
+
+
+         //Modificar
+
+         $user = User::find(1);
+
+         $user->name = "Mario";
+         $user->save();
+
+
+         User::where('id',1)->update([
+             'lastname'=>"apellido",
+             'email'=>"mario@mario.es",
+         ]);
+
+         //Eliminar
+         $user = User::find(11);
+         $user->delete();
+
+     // Crear/insertar
+         User::create([
+             'name'=>"Mario nuevo",
+             'lastname'=>"Mario apellido",
+             'email'=>"mario@mario.es",
+             'password'=>\Illuminate\Support\Facades\Hash::make("123456"),
+         ]);
+
+         */
+});
+
 
 Route::get('/', [MainController::class,'index']);
 
