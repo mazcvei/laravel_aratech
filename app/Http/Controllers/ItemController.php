@@ -14,6 +14,7 @@ class ItemController extends Controller
         $data = ["0"=>"item1","1"=>"item2","2"=>"item3","3"=>"item4"];
         //return view('itemViews.index',['data'=>$data]);
         //return view('itemViews.index')->with('data',$data);
+
         return view('itemViews.index',compact('data'));
     }
     /**
@@ -29,6 +30,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         dd($request->all());
+        //$vehiculo->itv_pasada ? 'selected' : ''
 
     }
     /**
@@ -51,7 +53,8 @@ class ItemController extends Controller
      */
     public function update(Request $request)
     {
-        //dd($request->all());
+        dd($request->all());
+
         echo "Editando el item con id $request->idItem y poniendo como nombre: $request->item";
 
         //redirecciones
