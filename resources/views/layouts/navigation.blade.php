@@ -33,6 +33,9 @@
                     </a>
                 </form>
                 </li>
+                    <li class="nav-item">
+                        <img style="width: 60px;height: 60px" src="storage/avatars/{{\Illuminate\Support\Facades\Auth::user()->avatar}}">
+                    </li>
                 @endauth
             </ul>
         </div>

@@ -2,10 +2,19 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-6" style="margin: auto">
 
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
 
                     <!-- Name -->
@@ -49,14 +58,24 @@
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                     </div>
 
+                    <div class="mt-4">
+                        <x-input-label for="avatar" />
+
+                        <x-text-input id="avatar" class="block mt-1 w-full"
+                                      type="file" accept="image/*"
+                                      name="avatar" />
+
+                        <x-input-error :messages="$errors->get('avatar')" class="mt-2" />
+                    </div>
+
                     <div class="flex items-center justify-end mt-4">
                         <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                             {{ __('Already registered?') }}
                         </a>
 
-                        <x-primary-button class="ms-4">
-                            {{ __('Register') }}
-                        </x-primary-button>
+                        <button  class="btn btn-primary ms-4">
+                            Registrar
+                        </button>
                     </div>
                 </form>
             </div>

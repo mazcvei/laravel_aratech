@@ -1,6 +1,6 @@
 
 html,p,h1,tr,td,th,a,label,button,input{
-    color:red !important;
+    color:black;
 }
 
 .box{
@@ -10,4 +10,7 @@ html,p,h1,tr,td,th,a,label,button,input{
     background-color: #000a30;
     border-radius: 5px;
     text-align: center;
+}
+.box a,p{
+    color: white !important;
 }
