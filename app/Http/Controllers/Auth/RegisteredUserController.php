@@ -32,8 +32,6 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
-
-
         if($request->hasFile('avatar') && $request->file('avatar') ){
             $uploadedFile = $request->file('avatar');
             $fileName = $uploadedFile->getClientOriginalName();
@@ -43,7 +41,7 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'lastname' => $request->name,
             'email' => $request->email,
-            'avatar'=>$fileName ?? null,
+            'avatar'=> $fileName ?? null,
             'password' => Hash::make($request->password),
         ]);
 
